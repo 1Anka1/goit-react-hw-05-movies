@@ -1,38 +1,16 @@
-// import React, { Component } from 'react';
-
-// import api from './api/fetchApi';
-
-
-// export default class App extends Component {
-//   state = {
-//     articles: [],
-//     isLoading: false,
-//     error: null,
-//   };
-
-//   async componentDidMount() {
-//     this.setState({ isLoading: true });
-
-//     try {
-//       const articles = await api.fetchArticlesWithQuery("react");
-//       console.log(articles);
-//       this.setState({ articles });
-//     } catch (error) {
-//       this.setState({ error });
-//     } finally {
-//       this.setState({ isLoading: false });
-//     }
-//   }
-
-//   render() {
-//     const { articles, isLoading, error } = this.state;
-
-//     return (
-//       <div>
-//         {error && <p>Whoops, something went wrong: {error.message}</p>}
-//         {isLoading && <ContentLoader/>}
-//         {articles.length > 0 && <ArticleList articles={articles} />}
-//       </div>
-//     );
-//   }
-// }
+export const App = () => {
+  return (
+    <div
+      style={{
+        height: '100vh',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        fontSize: 40,
+        color: '#010101'
+      }}
+    >
+      React homework template
+    </div>
+  );
+};

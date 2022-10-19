@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { searchTrendDayMovie } from 'components/service/api.jsx'
 
+//Component
 import MoviesList from './MovieList/MoviesList'
 import Loader from 'components/Loader/Loader.jsx'
 

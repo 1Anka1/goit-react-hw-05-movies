@@ -3,6 +3,7 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
+  
 }
 
 .link {
@@ -11,6 +12,7 @@
   text-decoration: none;
   display: inline-block;
   color: black;
+  
 }
 .link.active {
   border-bottom: 3px solid red;

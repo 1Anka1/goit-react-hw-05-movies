@@ -13,7 +13,7 @@ export const App = () => {
       <Routes>
         <Route path='/' element={<SharedLayout />}>
         <Route path='/' element={<Home/>} />
-          <Route path='movies' element={<div>MovieDetails</div>}>
+          <Route path='movies' element={<div>Movies</div>}>
             <Route path="/movies:movieId" element={<div>MovieDetails</div>} />
             <Route path="/movies/:movieId/cast" element={<div>Cast</div>} />
           <Route path="/movies/:movieId/reviews" element={<div>Reviews</div>}/>

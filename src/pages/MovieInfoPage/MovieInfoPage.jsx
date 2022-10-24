@@ -47,56 +47,87 @@ export default function MovieInfoPage() {
 
  const { name, title, vote_average, overview} = movie;
     return (
-      
-        
-    <section className={css.movieSection}>
-        <button type="button" onClick={goBack} className={css.goBackBtn}>Go back</button>
-      {loading && <Loader />}
-      {error && (
-                <div className={css.movieImgThumb}>
-                    <h4>The resource you requested could not be found.</h4>
-                    <img src={'https://www.ra.bm/wp-content/themes/consultix/images/no-image-found-360x250.png'} alt='' className={css.movieImg}/>
-                </div>
-                )}
+      <section className={css.movieSection}>
+        <button className={css.buttonBack} type="button" onClick={goBack}>
+          Back
+        </button>
+        {loading && <Loader />}
+        {error && (
+          <div className={css.movieImgThumb}>
+            <h4>The resource you requested could not be found.</h4>
+            <img
+              src={
+                'https://www.ra.bm/wp-content/themes/consultix/images/no-image-found-360x250.png'
+              }
+              alt=""
+              className={css.movieImg}
+            />
+          </div>
+        )}
 
-      {movie && (
-        <>
+        {movie && (
+          <>
             <div className={css.movieWrapper}>
-                <div className={css.movieImgThumb}>
-                    <img src={imagePath} alt={name} className={css.movieImg}/>
+              <div className={css.movieImgThumb}>
+                <img src={imagePath} alt={name} className={css.movieImg} />
+              </div>
+
+              <div className={css.movieInfo}>
+                <h2 className={css.movieTitle}>
+                  {title || name} ({releaseDate})
+                </h2>
+                <ul className={css.movieInfoList}>
+                  <li className={css.movieInfoItem}>
+                    User score:{' '}
+                    <span className={css.movieInfoDetail}>
+                      {Math.round(vote_average * 10)}%
+                    </span>
+                  </li>
+                </ul>
+                <div className={css.movieInfoWrapper}>
+                  <h4>Overview</h4>
+                  <p className={css.movieInfoAbout}>{overview}</p>
                 </div>
 
-                <div className={css.movieInfo}>
-                    <h2 className={css.movieTitle}>{title || name} ({releaseDate})</h2>
-                    <ul className={css.movieInfoList}>
-                        <li className={css.movieInfoItem}>User score: <span className={css.movieInfoDetail}>{Math.round(vote_average * 10)}%</span></li>
-                    </ul>  
-                    <div className={css.movieInfoWrapper}>
-                        <h4>Overview</h4>
-                        <p className={css.movieInfoAbout}>{overview}</p>
-                    </div>   
-                    
-                    
-                    <div className={css.movieInfoWrapper}>
-                        <h4>Genres</h4>
-                        <p className={css.movieInfoAbout}>
-                            {movie.genres.map(({name, id}) => 
-                                (<span  className={css.movieGenre} key = {id}>{name}</span>))}
-                        </p>
-                    </div>
-                
+                <div className={css.movieInfoWrapper}>
+                  <h4>Genres</h4>
+                  <p className={css.movieInfoAbout}>
+                    {movie.genres.map(({ name, id }) => (
+                      <span className={css.movieGenre} key={id}>
+                        {name}
+                      </span>
+                    ))}
+                  </p>
                 </div>
+              </div>
             </div>
 
             <div className={css.movieAdditionalWrapper}>
-                <h4>Additional information</h4>
-                <ul className={css.movieAdditionalInfoList}>
-                    <li><NavLink state = {{from}} to={castLink} className={getClassName}>Cast</NavLink></li> 
-                    <li><NavLink state = {{from}} to={reviewsLink} className={getClassName}>Reviews</NavLink></li> 
-                </ul>
-                <Outlet/>
+              <h4>Additional information</h4>
+              <ul className={css.movieAdditionalInfoList}>
+                <li>
+                  <NavLink
+                    state={{ from }}
+                    to={castLink}
+                    className={getClassName}
+                  >
+                    Cast
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    state={{ from }}
+                    to={reviewsLink}
+                    className={getClassName}
+                  >
+                    Reviews
+                  </NavLink>
+                </li>
+              </ul>
+              <Outlet />
             </div>
-        </>)}
-    </section>
-  )
+          </>
+        )}
+      </section>
+    );
 }

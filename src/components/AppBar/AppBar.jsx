@@ -1,14 +1,14 @@
 import { NavLink } from 'react-router-dom';
-import styles from './AppBar.module.css';
+import css from './AppBar.module.scss';
 import items from './items';
 
 const getClassName = ({ isActive }) => {
-  return isActive ? `${styles.link} ${styles.active}` : `${styles.link}`;
+  return isActive ? `${css.link} ${css.active}` : `${css.link}`;
 };
 
 export const AppBar = () => {
   return (
-    <div>
+    <div className={css.appBar}>
       <nav>
         {items.map(({ id, to, text }) => (
           <NavLink key={id} className={getClassName} to={to} end>

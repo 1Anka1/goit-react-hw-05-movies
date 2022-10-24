@@ -1,84 +1,93 @@
-.goBackBtn{
-    cursor: pointer;
+.buttonBack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 20px;
+  margin: 5px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #3d3d3d;
+  background: #fff;
+  border: none;
+  box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    background: #F6F9FE;
+    color: darkslateblue;
+  }
+}
+.movieWrapper {
+  display: flex;
+  margin-bottom: 6px;
+  padding: 8px;
+  border-bottom: 1px solid #6e6e6e;
 }
 
-.goBackBtn:hover{
-    border-radius: 2px;
+.movieAdditionalWrapper {
+  margin-bottom: 6px;
+  padding: 8px;
 }
 
-.movieWrapper{
-    display: flex;
-    margin-bottom: 6px;
-    padding: 8px;
-    border-bottom: 1px solid #6e6e6e;
-
+.movieImgThumb {
+  min-width: 320px;
+  border-radius: 4px;
+  overflow: hidden;
+  object-fit: cover;
 }
 
-.movieAdditionalWrapper{
-    margin-bottom: 6px;
-    padding: 8px;
+.movieImg {
+  width: 320px;
 }
 
-.movieImgThumb{
-    min-width: 320px;
-    border-radius: 4px;
-    overflow: hidden;
-    object-fit: cover;
+.movieInfo {
+  display: flex;
+  flex-direction: column;
+  padding-left: 40px;
 }
 
-.movieImg{
-    width: 320px;
+.movieTitle {
+  margin-bottom: 20px;
 }
 
-.movieInfo{
-    display: flex;
-    flex-direction: column;
-    padding-left: 40px;
+.movieInfoList {
+  list-style: none;
+  margin-bottom: 20px;
 }
 
-.movieTitle{
-    margin-bottom: 20px;
+.movieAdditionalInfoList {
+  list-style-type: none;
+  padding: 12px;
 }
 
-.movieInfoList{
-    list-style: none;
-    margin-bottom: 20px;
+.movieInfoItem {
+  font-size: 16px;
+  font-weight: 500;
 }
 
-.movieAdditionalInfoList{
-    list-style-type: none;
-    padding: 12px;
+.movieInfoDetail {
+  padding-left: 8px;
 }
 
-
-.movieInfoItem{
-    font-size: 16px;
-    font-weight: 500;
+.movieInfoWrapper {
+  margin-bottom: 20px;
 }
 
-.movieInfoDetail{
-    padding-left: 8px;
+.movieGenre {
+  margin-right: 12px;
 }
 
-.movieInfoWrapper{
-    margin-bottom: 20px;
+.movieInfoItem:not(:last-child) {
+  margin-bottom: 6px;
+}
+.movieInfoAbout {
+  padding-top: 8px;
+  font-size: 16px;
 }
 
-.movieGenre{
-margin-right: 12px;
-}
-
-.movieInfoItem:not(:last-child){
-    margin-bottom: 6px;
-}
-.movieInfoAbout{
-    padding-top: 8px;
-    font-size: 16px;
-}
-
-.link{
-    text-decoration: none;
-    display: inline-block;
-    color: rgb(34, 32, 32);
-    font-size: 16px;
+.link {
+  text-decoration: none;
+  display: inline-block;
+  color: rgb(34, 32, 32);
+  font-size: 16px;
 }

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { CiSearch  } from "react-icons/ci";
-import css from './MoviesSearchForm.module.css';
+import css from './MoviesSearchForm.module.scss';
 
 export default function MoviesSearchForm({ onSubmit }) {
   const [search, setSearch] = useState('');

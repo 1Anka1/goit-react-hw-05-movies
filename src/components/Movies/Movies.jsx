@@ -1,20 +1,16 @@
-import { useState, useEffect } from "react"
-import { searchTrendDayMovie } from 'components/service/api.jsx'
-
-//Component
-import MoviesList from './MovieList/MoviesList'
-import Loader from 'components/Loader/Loader.jsx'
-
-
+import { useState, useEffect } from 'react'
+import MoviesList from './MoviesList/MoviesList'
+import {searchTrendDayMovie} from 'components/Api/api'
+import css from './Movies.module.scss'
+import  Loader  from 'components/shared/Loader/Loader'
 
 export default function Movies() {
-
     const [movies, setMovies] = useState([])
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(null)
 
-
-    useEffect(() =>{
+    
+      useEffect(() =>{
 
         const fetchMovies = async ()=> {          
             try{
@@ -34,11 +30,12 @@ export default function Movies() {
 
     }, [])
 
-    return (
-       <div>
-      <h2>Trending: </h2>
+  return (
+    <div className={css.container}>
+      <h2>Trending today</h2>
       {Boolean(movies.length) && <MoviesList items={movies} />}
-      {loading && <Loader />}
+      {loading && <Loader/>}
       {error && <p>Movies load fail</p>}
-    </div>)
-};
+    </div>
+  )
+}
